@@ -94,7 +94,7 @@ pipelineConfig:
                 - --destination=702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/jxl:${inputs.params.version}
                 - --context=/workspace/source
                 - --skip-tls-verify-registry=702769831180.dkr.ecr.ap-south-1.amazonaws.com
-                - --cache-repo=702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/jxl/cache
+                #- --cache-repo=702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/jxl/cache
                 - --cache=true
                 #- --cache-dir=/workspace
           - agent:

@@ -84,9 +84,9 @@ pipelineConfig:
                 value: jenkins-x-bot
             steps:
             # build base images
-            # - name: build-base
-            #   image: gcr.io/jenkinsxio/builder-go:0.0.0-SNAPSHOT-PR-7104-79
-            #   command: /workspace/source/builder-base/build-ng.sh
+            - name: build-go
+              image: gcr.io/jenkinsxio/builder-go:0.0.0-SNAPSHOT-PR-7104-79
+              command: make linux
             - name: build-and-push-base
               command: /kaniko/executor
               args:

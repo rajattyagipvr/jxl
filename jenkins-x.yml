@@ -41,7 +41,7 @@ pipelineConfig:
             resources:
               requests:
                 cpu: 1200m
-                memory: 7Gi
+                memory: 6Gi
             securityContext:
               privileged: true
             volumeMounts:

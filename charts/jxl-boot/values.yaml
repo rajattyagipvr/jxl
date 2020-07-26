@@ -4,7 +4,7 @@
 
 image:
   repository: 702769831180.dkr.ecr.ap-south-1.amazonaws.com/jenkinsxio-labs/jxl
-  tag: 0.0.205
+  tag: 0.0.206
   pullPolicy: IfNotPresent
 
 serviceAccount:

@@ -41,4 +41,4 @@ replace github.com/russross/blackfriday => github.com/russross/blackfriday v1.5.
 
 replace github.com/jenkins-x/jx v0.0.0-20200407063749-f19676961cb7 => github.com/rajattyagipvr/jx v2.1.100
 
-replace github.com/jenkins-x-labs/helmboot => github.com/rajattyagipvr/helmboot v.0.0.91
+replace github.com/jenkins-x-labs/helmboot => github.com/rajattyagipvr/helmboot v0.0.91

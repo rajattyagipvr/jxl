@@ -1,0 +1,54 @@
+
+Showing logs for build [32mmeta-rajattyagipvr-jxl-master-dmtcb-15[0m stage [32mmeta-pipeline[0m and container [32mstep-credential-initializer-dljm9[0m
+{"level":"warn","ts":1595733326.6190727,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1595733326.6194398,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmeta-rajattyagipvr-jxl-master-dmtcb-15[0m stage [32mmeta-pipeline[0m and container [32mstep-working-dir-initializer-2d2rw[0m
+{"level":"warn","ts":1595733327.6029644,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1595733327.6040835,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mmeta-rajattyagipvr-jxl-master-dmtcb-15[0m stage [32mmeta-pipeline[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmeta-rajattyagipvr-jxl-master-dmtcb-15[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-rajattyagipvr-jxl-master-dmtcb-v7hqg[0m
+{"level":"warn","ts":1595733332.6652663,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1595733335.4282906,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*************/**l.git @ bd5d6e4dd5dc50535a2e6a5c121b25f0cc6210c6 in path /workspace/source"}
+
+Showing logs for build [32mmeta-rajattyagipvr-jxl-master-dmtcb-15[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:bd5d6e4dd5dc50535a2e6a5c121b25f0cc6210c6
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mmeta-rajattyagipvr-jxl-master-dmtcb-15[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+SKIP merge-pull-refs: Nothing to merge
+
+Showing logs for build [32mmeta-rajattyagipvr-jxl-master-dmtcb-15[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+Cloning the Jenkins X versions repo https://github.com/*************/jenkins-x-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+Effective pipeline written to jenkins-x-effective.yml
+
+Showing logs for build [32mmeta-rajattyagipvr-jxl-master-dmtcb-15[0m stage [32mmeta-pipeline[0m and container [32mstep-create-tekton-crds[0m
+running command: ** step next-version --use-git-tag-only
+created new version: 0.0.202 and written to file: ./VERSION
+
+running command: ** step tag --version \$(cat VERSION)
+Updating chart version in charts/**l-boot/Chart.yaml to 0.0.202
+Updating repository in charts/**l-boot/values.yaml to 702769831180.dkr.ecr.ap-south-1.amazonaws.com/jenkinsxio-labs/**l
+Updating tag in charts/**l-boot/values.yaml to 0.0.202
+Tag v0.0.202 created and pushed to remote origin
+
+running command: ** step next-version --use-git-tag-only
+created new version: 0.0.203 and written to file: ./VERSION
+
+running command: ** step tag --version \$(cat VERSION) --no-apply
+Updating chart version in charts/**l-boot/Chart.yaml to 0.0.203
+Updating repository in charts/**l-boot/values.yaml to 702769831180.dkr.ecr.ap-south-1.amazonaws.com/jenkinsxio-labs/**l
+Updating tag in charts/**l-boot/values.yaml to 0.0.203
+NoApply: no push tag to git server
+
+running command: ** step helm release
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: bucketrepo http://bucketrepo/bucketrepo/charts/
+Successfully added Helm repository bucketrepo.
+error: failed to build dependencies for chart from directory '.': failed to build the dependencies of chart '.': failed to run 'helm dependency build' command in directory '.', output: 'Error: validation: chart.metadata is required'
+error: failed to set the version on release pipelines: failed to run '/bin/sh -c ** step helm release' command in directory '/workspace/source', output: ''
+[31m
+Pipeline failed on stage 'meta-pipeline' : container 'step-create-tekton-crds'. The execution of the pipeline has stopped.[0m

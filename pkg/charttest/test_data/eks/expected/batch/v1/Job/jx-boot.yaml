@@ -54,7 +54,7 @@ spec:
           value: "true"
         - name: JX_HOME
           value: /secrets
-        image: "gcr.io/jenkinsxio-labs/jxl:0.0.88"
+        image: "702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/jxl:0.0.88"
         imagePullPolicy: IfNotPresent
         name: boot
       restartPolicy: Never

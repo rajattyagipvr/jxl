@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 image:
-  repository: gcr.io/jenkinsxio-labs/jxl
+  repository: 702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/jxl
   tag: ""
   pullPolicy: IfNotPresent
 

@@ -13,7 +13,8 @@ jx step create pr regex \
     --version ${VERSION} \
     --files docker/702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/jxl.yml \
     --files packages/jxl.yml \
-    --files charts/jx-labs/jxl-boot.yml \
+#    --files charts/jx-labs/jxl-boot.yml \
+    --files charts/jxrajat/jxl-boot.yml \
     --repo https://github.com/rajattyagipvr/jenkins-x-versions.git
 
 jx step create pr regex \

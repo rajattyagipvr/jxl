@@ -1,5 +1,6 @@
-buildPack: go-cli
-dockerRegistryOwner: jenkinsxio-labs
+#buildPack: go-cli
+buildPack: none
+#dockerRegistryOwner: jenkinsxio-labs
 pipelineConfig:
   pipelines:
     # overrides:
@@ -124,17 +125,17 @@ pipelineConfig:
           #     # - name: build-and-push-image
           #     #   command: ./build.sh
 
-            - name: release-chart
-              command: make release
-              image: gcr.io/jenkinsxio-labs/helm:0.0.21
-              dir: /workspace/source/charts/jxl-boot
-              env:
-                - name: GOOGLE_APPLICATION_CREDENTIALS
-                  value: /secrets/charts/credentials.json
+            # - name: release-chart
+            #   command: make release
+            #   image: gcr.io/jenkinsxio-labs/helm:0.0.21
+            #   dir: /workspace/source/charts/jxl-boot
+            #   env:
+            #     - name: GOOGLE_APPLICATION_CREDENTIALS
+            #       value: /secrets/charts/credentials.json
 
-            - name: release-binary
-              command: make release
-              image: golang:1.12
+            # - name: release-binary
+            #   command: make release
+            #   image: golang:1.12
 
             - name: changelog
               command: jx step changelog --verbose --header-file=hack/changelog-header.md --version=$VERSION --rev=$PULL_BASE_SHA --output-markdown=changelog.md --update-release=false
